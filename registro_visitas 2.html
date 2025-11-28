@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Registro de Visitas</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 20px; }
+button { width: 100%; padding: 15px; margin: 10px 0; font-size: 18px; }
+</style>
+<script>
+function registrar(punto) {
+    const ahora = new Date();
+    const fecha = ahora.toLocaleDateString('es-MX');
+    const hora = ahora.toLocaleTimeString('es-MX');
+    const texto = "Registro de visita:%0A" +
+                  "Punto: " + punto + "%0A" +
+                  "Fecha: " + fecha + "%0A" +
+                  "Hora: " + hora;
+
+    const url = "https://wa.me/?text=" + texto;
+    window.location.href = url;
+}
+</script>
+</head>
+<body>
+<h2>Registro de Llegada / Salida</h2>
+<p>Toca el punto donde estás:</p>
+
+<button onclick="registrar('Mundo E')">Mundo E</button>
+<button onclick="registrar('Plaza Satélite')">Plaza Satélite</button>
+<button onclick="registrar('Santa Fe')">Santa Fe</button>
+<button onclick="registrar('Interlomas')">Interlomas</button>
+<button onclick="registrar('Perisur')">Perisur</button>
+<button onclick="registrar('Durango')">Durango</button>
+
+</body>
+</html>
